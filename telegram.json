@@ -1,0 +1,10 @@
+{
+  "id": "p2p",
+  "description": "P2P",
+  "gendevices": 0,
+  "single":1,
+  "module": "index.js",
+  "params": [],
+  "genrules": {},
+  "commands": []
+}
