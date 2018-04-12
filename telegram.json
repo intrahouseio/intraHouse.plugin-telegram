@@ -1,10 +1,12 @@
 {
-  "id": "p2p",
-  "description": "P2P",
+  "id": "telegram",
+  "description": "Telegram plugin",
   "gendevices": 0,
   "single":1,
   "module": "index.js",
   "params": [],
   "genrules": {},
-  "commands": []
+  "commands": [
+    {"id":"send_all","name":"Send all","reload":true,"noclose":false}
+  ]
 }
