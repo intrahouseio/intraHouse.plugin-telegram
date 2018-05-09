@@ -53,7 +53,7 @@ function message(msg) {
 }
 
 function start(options) {
-  const token = '578902439:AAHQudZo296l17lMfpLu1GE-4e8mKLxCM4A';
+  const token = options.token;
   bot = new TelegramBot(token, { polling: true });
 
   bot.onText(/\/start/, command_start);
