@@ -4,7 +4,14 @@
   "gendevices": 0,
   "single":1,
   "module": "index.js",
-  "params": [],
+  "params": [
+    {
+      "name": "token",
+      "note": "Token",
+      "type": "string",
+      "val": ""
+    }
+  ],
   "genrules": {},
   "commands": [
     {"id":"send_all","name":"Send all","reload":true,"noclose":false}
