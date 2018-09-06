@@ -12,7 +12,7 @@ plugin.on('debug', mode => {
 });
 
 function telegram_message({ from, text }) {
-  plugin.debug(`msg: ${from.id}, ${text}`);
+  plugin.debug(`msg -> id:${from.id}, text:${text}`);
   telegram.sendText(from.id, text);
 }
 
@@ -23,7 +23,7 @@ function telegram_debug(text) {
 function start(options) {
   plugin.debug("version: 0.0.1");
 
-  telegram = new Telegram({ token: options.token, proxy: 'auto' });
+  telegram = new Telegram({ token: options.token, proxy: options.proxy === 'manual' ? options.HTTPProxy : options.proxy });
   telegram.on('debug', telegram_debug);
   telegram.on('msg_text', telegram_message);
 

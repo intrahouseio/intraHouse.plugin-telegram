@@ -1,0 +1,8 @@
+{
+  "Token": "Token",
+  "Proxy": "Proxy",
+  "Disabled": "Disabled",
+  "Manual": "Manual",
+  "Auto": "Auto (use public)",
+  "HTTPProxy": "HTTP Proxy"
+}
