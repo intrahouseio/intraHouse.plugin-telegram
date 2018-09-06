@@ -10,9 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-telegram-bot-api": "^0.30.0",
-    "request": "^2.88.0",
-    "socks5-http-client": "^1.0.4",
-    "socks5-https-client": "^1.2.1"
+    "request": "^2.88.0"
   }
 }
