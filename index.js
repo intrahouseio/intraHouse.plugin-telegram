@@ -17,6 +17,13 @@ plugin.on('infousers', list => {
   });
 });
 
+plugin.on('info', data => {
+  data.sendTo.forEach(user => {
+    plugin.debug(`info -> id:${user.addr}, text:${data.txt}`);
+    telegram.sendText(user.addr, data.txt);
+  });
+});
+
 function checkUser(id) {
   if (users.hasOwnProperty(id)) {
     return users[id];
@@ -25,14 +32,14 @@ function checkUser(id) {
 }
 
 function telegram_user_not_found(id) {
-  telegram.sendText(id, `Незарегистрированный пользователь ${id}. Руководство по настройке https://intrahouse.ru/shop/`);
+  telegram.sendText(id, `Незарегистрированный пользователь ${id}. Руководство по настройке https://intrahouse.ru/product/plugin-telegram/`);
 }
 
 function telegram_message({ from, text }) {
   const user = checkUser(from.id);
   if (user) {
     plugin.debug(`msg -> id:${from.id}, text:${text}`);
-    telegram.sendText(from.id, text);
+    telegram.sendText(from.id, `Received: ${text}`);
   } else {
     telegram_user_not_found(from.id)
   }
@@ -43,7 +50,7 @@ function telegram_debug(text) {
 }
 
 function start(options) {
-  plugin.debug("version: 0.0.2");
+  plugin.debug("version: 0.0.3");
 
   telegram = new Telegram({ token: options.token, proxy: options.proxy === 'manual' ? options.HTTPProxy : options.proxy });
   telegram.on('debug', telegram_debug);
