@@ -19,6 +19,13 @@ plugin.on('infousers', list => {
 
 plugin.on('info', data => {
   data.sendTo.forEach(user => {
+
+    /* control notifications ON
+    const hours = new Date().getHours();
+    plugin.debug(`info -> id:${user.addr}, text:${data.txt}`);
+    telegram.sendText(user.addr, data.txt, 9 <= hours && hours <= 18);
+    */
+
     plugin.debug(`info -> id:${user.addr}, text:${data.txt}`);
     telegram.sendText(user.addr, data.txt);
   });
