@@ -3,7 +3,7 @@
   "description": "Telegram plugin",
   "gendevices": 0,
   "service": "info",
-  "single": 1,
+  "single": 0,
   "module": "index.js",
   "params": [
     {

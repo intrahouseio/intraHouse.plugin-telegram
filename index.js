@@ -39,7 +39,7 @@ function checkUser(id) {
 }
 
 function telegram_user_not_found(id) {
-  telegram.sendText(id, `Незарегистрированный пользователь ${id}. Руководство по настройке https://intrahouse.ru/product/plugin-telegram/`);
+  telegram.sendText(id, `Незарегистрированный пользователь ${id}.`);
 }
 
 function telegram_message({ from, text }) {
