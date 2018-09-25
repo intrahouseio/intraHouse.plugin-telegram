@@ -39,7 +39,7 @@ function checkUser(id) {
 }
 
 function telegram_user_not_found(id) {
-  telegram.sendText(id, `Незарегистрированный пользователь ${id}.`);
+  telegram.sendText(id, `User is not registered ${id}.`);
 }
 
 function telegram_message({ from, text }) {
