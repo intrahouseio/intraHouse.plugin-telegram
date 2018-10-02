@@ -1,10 +1,10 @@
 const child = require('child_process');
 const modulepath = './index.js';
 
-const unitid = 'plugin_telegram'
+const unitid = 'telegram'
 
 const params = {
-  token: '578902439:AAHQudZo296l17lMfpLu1GE-4e8mKLxCM4A',
+  token: '',
   proxy: 'auto',
 }
 
