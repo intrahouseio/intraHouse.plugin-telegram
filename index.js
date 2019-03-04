@@ -57,7 +57,7 @@ function telegram_debug(text) {
 }
 
 function start(options) {
-  plugin.debug("version: 0.0.8");
+  plugin.debug("version: 0.0.9");
 
   telegram = new Telegram({ token: options.token, proxy: options.proxy === 'manual' ? options.HTTPProxy : options.proxy });
   telegram.on('debug', telegram_debug);
