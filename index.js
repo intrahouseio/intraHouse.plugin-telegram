@@ -25,9 +25,13 @@ plugin.on('info', data => {
     plugin.debug(`info -> id:${user.addr}, text:${data.txt}`);
     telegram.sendText(user.addr, data.txt, 9 <= hours && hours <= 18);
     */
-
-    plugin.debug(`info -> id:${user.addr}, text:${data.txt}`);
-    telegram.sendText(user.addr, data.txt);
+    if (data.img === undefined) {
+      plugin.debug(`send_txt -> id:${user.addr}, text:${data.txt}`);
+      telegram.sendText(user.addr, data.txt);
+    } else {
+      plugin.debug(`send_img -> id:${user.addr}, text:${data.txt}`);
+      telegram.sendImg(user.addr, data.img, data.txt);
+    }
   });
 });
 

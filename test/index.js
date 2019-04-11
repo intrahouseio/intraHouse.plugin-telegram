@@ -4,7 +4,7 @@ const modulepath = './index.js';
 const unitid = 'telegram'
 
 const params = {
-  token: '',
+  token: '578902439:AAHQudZo296l17lMfpLu1GE-4e8mKLxCM4A',
   proxy: 'auto',
 }
 
@@ -45,3 +45,5 @@ ps.on('close', code => {
 });
 
 ps.send({type: 'debug', mode: true });
+
+// setTimeout(() => ps.send({ type: 'sub', data: { sendTo: [{ addr: '76739448' }], txt: { txt: 'test', img: 'snap_1554806144191.jpg' } } }), 1500)
