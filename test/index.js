@@ -4,7 +4,7 @@ const modulepath = './index.js';
 const unitid = 'telegram'
 
 const params = {
-  token: '578902439:AAHQudZo296l17lMfpLu1GE-4e8mKLxCM4A',
+  token: '',
   proxy: 'auto',
 }
 
