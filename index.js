@@ -50,7 +50,8 @@ function telegram_message({ from, text }) {
   const user = checkUser(from.id);
   if (user) {
     plugin.debug(`msg -> id:${from.id}, text:${text}`);
-    telegram.sendText(from.id, `Received: ${text}`);
+    plugin.setChannelsData([{ id: 'incoming_message', value: text, ext: { update: Date.now()} }])
+    // telegram.sendText(from.id, `Received: ${text}`);
   } else {
     telegram_user_not_found(from.id)
   }
@@ -61,7 +62,9 @@ function telegram_debug(text) {
 }
 
 function start(options) {
-  plugin.debug("version: 0.0.9");
+  plugin.debug("version: 0.0.11");
+
+  plugin.setChannels([{ id: 'incoming_message', desc: 'incoming_message' }]);
 
   telegram = new Telegram({ token: options.token, proxy: options.proxy === 'manual' ? options.HTTPProxy : options.proxy });
   telegram.on('debug', telegram_debug);
