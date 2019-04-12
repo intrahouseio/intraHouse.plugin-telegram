@@ -50,7 +50,7 @@ function telegram_message({ from, text }) {
   const user = checkUser(from.id);
   if (user) {
     plugin.debug(`msg -> id:${from.id}, text:${text}`);
-    plugin.setChannelsData([{ id: 'incoming_message', value: text, ext: { update: Date.now()} }])
+    plugin.setChannelsData([{ id: 'incoming_message', value: text, ext: { userid: from.id, update: Date.now()} }])
     // telegram.sendText(from.id, `Received: ${text}`);
   } else {
     telegram_user_not_found(from.id)
@@ -62,7 +62,7 @@ function telegram_debug(text) {
 }
 
 function start(options) {
-  plugin.debug("version: 0.0.11");
+  plugin.debug("version: 0.0.12");
 
   plugin.setChannels([{ id: 'incoming_message', desc: 'incoming_message' }]);
 

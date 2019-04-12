@@ -42,7 +42,23 @@
   ],
   "genrules": {
     "incoming_message": {
-      "type": 200
+      "type": 200,
+      "ext": {
+        "ext": [
+          {
+            "name": "update",
+            "note": "update",
+            "type": "string",
+            "op": "r"
+          },
+          {
+            "name": "userid",
+            "note": "userid",
+            "type": "string",
+            "op": "r"
+          }
+        ]
+      }
     }
   },
   "commands": [
