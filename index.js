@@ -63,7 +63,7 @@ function telegram_debug(text) {
 }
 
 function start(options) {
-  plugin.debug("version: 0.0.15");
+  plugin.debug("version: 0.0.16");
 
   plugin.setChannels([{ id: 'incoming_message', desc: 'incoming_message' }]);
 
